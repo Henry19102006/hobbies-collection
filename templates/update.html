@@ -4,8 +4,8 @@
 
     <h1>Hobbies Collection</h1>
     <br />
-    <h2>Informe os dados do novo livro:</h2>
-    <form action="/" method="post">
+    <h2>Informe os dados do livro:</h2>
+    <form action="/update/{{livro['id'] }}" method="post">
         <label for="titulo">Título</label>
         <input type="text" id="titulo" name="titulo" required>
         <br />
@@ -13,18 +13,7 @@
         <input type="text" id="autor" name="autor" required>
         <br />
         <button type="submit">Adicionar Livro</button>
+        <button type="submit">Cancelar</button>
     </form>
-
-    <h2>Lista de Livros</h2>
-
-    <ul>
-        {% for livro in livros %}
-            <li>
-                {{ livro['titulo'] }} por {{ livro['autor'] }}
-                <a href="/delete/{{ livro['id'] }}"><i class="fa-regular fa-trash-can"></i></a>
-                <a href="/update/{{ livro['id'] }}"><i class="fa-regular fa-pen-to-square"></i></a>
-            </li>
-        {% endfor %}
-    </ul>
 
 {% endblock %}
